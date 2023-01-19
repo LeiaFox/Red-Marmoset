@@ -1,0 +1,68 @@
+.login{
+    padding: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url('https://images.squarespace-cdn.com/content/v1/61015dfe5b508a1ac630744d/9c593755-60a9-409a-b7ad-f1d99b2098bd/RedMarmoset_Logo.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.login-box{
+    background-color: black;
+    color: #DE0000;
+    padding-left: 35px;
+    padding-right: 35px;
+    padding-top: 15px;
+    border-radius: 40px;
+    border-style: solid;
+    border-width: 5px;
+    border-color: #ED0000;
+}
+
+.login-text{
+    font-size: 35px;
+}
+
+.login-boxes{
+    display: flex;
+    flex-direction: column;
+    padding: 25px;
+}
+
+.empty-div{
+    padding-bottom: 30px;
+}
+
+.login-button{
+    cursor: pointer;
+    padding: 10px;
+    background-color: #DE0000;
+    color: #DDB8B8;
+    border-radius: 10px;
+    font-size: 35px;
+}
+
+.login-input{
+    padding: 15px;
+    background-color: #D77171;
+    border: none;
+    border-radius: 10px;
+    font-size: 20px;
+}
+
+.login-bottom-links{
+    padding: 15px;
+    padding-top: 25px;
+    display: flex;
+    flex-direction: row;
+}
+
+.forgot-password{
+    padding-right: 15px;
+}
+
+.no-account{
+    cursor: pointer;
+}

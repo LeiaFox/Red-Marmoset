@@ -1,6 +1,7 @@
 import './App.css';
 import Header from './Header';
 import Forum from './Forum';
+import Login from './Login';
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import {
@@ -18,7 +19,9 @@ function App() {
         <Header/>
 
         <Routes>
+          
           <Route path="/forum" element={<Forum />}/>
+          <Route path="/login" element={<Login />}/>
         </Routes>
 
       </BrowserRouter>

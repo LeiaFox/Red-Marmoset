@@ -11,20 +11,28 @@ export default function Forum() {
                 <form className='login-boxes'>
                     <input
                         type="email"
-                        className="login-email"
+                        className="login-email login-input"
                         placeholder="Email"
                     />
+                    <div className='empty-div'></div>
                     <input
                         type="username"
-                        className="login-username"
+                        className="login-username login-input"
                         placeholder="Username"
                     />
+                    <div className='empty-div'></div>
                     <input
                         type="password"
-                        className="login-password"
+                        className="login-password login-input"
                         placeholder="Password"
                     />
+                    <div className='empty-div'></div>
                 </form>
+                <button className='login-button'>Login</button>
+                <div className='login-bottom-links'>
+                    <div className='forgot-password'>Forgot your password?</div>
+                    <div className='no-account' onClick={() => {navigate("/login")}}>Don't have an account?</div>
+                </div>
             </div>
         </div>
     );
