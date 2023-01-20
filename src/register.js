@@ -34,7 +34,7 @@ export default function Register() {
                     />
                     <div className='empty-div'></div>
                 </form>
-                <button className='register-button'>Login</button>
+                <button className='register-button'>Register</button>
                 <div className='register-bottom-links'>
                     <div className='forgot-password'>Forgot your password?</div>
                     <div className='no-account' onClick={() => {navigate("/login")}}>Already have an account?</div>
