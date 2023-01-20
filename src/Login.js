@@ -3,6 +3,8 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 
 export default function Forum() {
+    
+
     const navigate = useNavigate();
     return (
         <div className='login'>
@@ -31,7 +33,7 @@ export default function Forum() {
                 <button className='login-button'>Login</button>
                 <div className='login-bottom-links'>
                     <div className='forgot-password'>Forgot your password?</div>
-                    <div className='no-account' onClick={() => {navigate("/login")}}>Don't have an account?</div>
+                    <div className='no-account' onClick={() => {navigate("/register")}}>Don't have an account?</div>
                 </div>
             </div>
         </div>

@@ -2,7 +2,8 @@ import './App.css';
 import Header from './Header';
 import Forum from './Forum';
 import Login from './Login';
-import React from "react";
+import Register from './Register';
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import {
   Routes,
@@ -12,19 +13,19 @@ import {
 } from "react-router-dom";
 
 function App() {
+  const [token, setToken] = useState();
+
   return (
     <div className="Red">
-      <BrowserRouter>
-
-        <Header/>
-
-        <Routes>
-          
+      <Header/>
+      {!token
+        ?<Login setToken={setToken} /> 
+        :<Routes>
           <Route path="/forum" element={<Forum />}/>
           <Route path="/login" element={<Login />}/>
+          <Route path="/register" element={<Register />}/>
         </Routes>
-
-      </BrowserRouter>
+      }
     </div>
   );
 }
