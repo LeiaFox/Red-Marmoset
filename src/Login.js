@@ -1,10 +1,9 @@
 import './Login.css';
 import React from "react";
+import PropTypes from 'prop-types';
 import { useNavigate } from "react-router-dom";
 
-export default function Forum() {
-    
-
+export default function Login({ setToken }) {
     const navigate = useNavigate();
     return (
         <div className='login'>
