@@ -1,0 +1,12 @@
+.forum{
+    display: flex;
+    padding: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url('https://images.squarespace-cdn.com/content/v1/61015dfe5b508a1ac630744d/9c593755-60a9-409a-b7ad-f1d99b2098bd/RedMarmoset_Logo.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    flex: 1;
+}

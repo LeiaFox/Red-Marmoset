@@ -1,4 +1,5 @@
 .register{
+    display: flex;
     padding: 25px;
     display: flex;
     justify-content: center;
@@ -7,6 +8,7 @@
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    flex: 1;
 }
 
 .register-box{

@@ -7,7 +7,7 @@ export default function Header() {
     const navigate = useNavigate();
     return (
         <div className='header'>
-            <div className='forum-link' onClick={() => {navigate("/login")}}>Forum</div>
+            <div className='forum-link' onClick={() => {navigate("/forum")}}>Forum</div>
             <img className='logo' src={logo} alt="Logo"/>
             <div className='empty-div'>Forum</div>
         </div>
