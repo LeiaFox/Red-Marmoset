@@ -23,7 +23,7 @@ export default function Login({ setToken }) {
     const handleSubmit = (e) => {
         e.preventDefault();
         // send a POST request to the backend with the login credentials
-        fetch('http://localhost:3000/login', {
+        fetch('http://localhost:8080/login', {
             method: 'POST',
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify({username, email, password}),
@@ -37,6 +37,7 @@ export default function Login({ setToken }) {
                   // set the token and redirect to the dashboard
                   setToken(data.token);
                   //redirect
+                  console.log("Redirecting...")
                   navigate("/forum");
                 }
             });

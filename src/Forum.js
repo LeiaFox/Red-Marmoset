@@ -2,6 +2,7 @@ import './Forum.css';
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import announcements from "./announcements.png";
+import avatar from "./avatar.png"
 
 export default function Forum() {
     const navigate = useNavigate();
