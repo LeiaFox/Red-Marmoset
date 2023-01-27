@@ -20,14 +20,22 @@ export default function Login({ setToken }) {
     const [password, setPassword] = useState();
     const navigate = useNavigate();
 
-    const handleSubmit = async e => {
+    const testUsers = [
+        {username: "testuser", email: "test@example.com", password: "password123"},
+        {username: "anotheruser", email: "another@example.com", password: "password456"},
+    ];
+
+    const handleSubmit = (e) => {
         e.preventDefault();
-        const token = await loginUser({
-            email,
-            username,
-            password
-        });
-        setToken(token);
+        const userExists = testUsers.some((user) => user.username === username && user.email === email && user.password === password);
+        if (userExists) {
+            // create and set token
+            const newToken = "your_token_here";
+            setToken(newToken);
+        } else {
+            // show error message
+            alert("Invalid login credentials. Please try again.");
+        }
     }
 
     return (
@@ -39,6 +47,7 @@ export default function Login({ setToken }) {
                         type="email"
                         className="login-email login-input"
                         placeholder="Email"
+                        value={email}
                         onChange={e => setEmail(e.target.value)}
                     />
                     <div className='empty-div'></div>
@@ -46,6 +55,7 @@ export default function Login({ setToken }) {
                         type="username"
                         className="login-username login-input"
                         placeholder="Username"
+                        value={username}
                         onChange={e => setUserName(e.target.value)}
                     />
                     <div className='empty-div'></div>
@@ -53,11 +63,12 @@ export default function Login({ setToken }) {
                         type="password"
                         className="login-password login-input"
                         placeholder="Password"
+                        value={password}
                         onChange={e => setPassword(e.target.value)}
                     />
                     <div className='empty-div'></div>
-                </form>
                 <button type='submit' className='login-button' onClick={() => handleSubmit}>Login</button>
+                </form>
                 <div className='login-bottom-links'>
                     <div className='forgot-password'>Forgot your password?</div>
                     <div className='no-account' onClick={() => {navigate("/register")}}>Don't have an account?</div>

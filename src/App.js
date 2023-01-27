@@ -40,8 +40,6 @@ function App() {
         :
         <Routes>
           <Route path="/forum" element={<Forum />}/>
-          <Route path="/login" element={<Login />}/>
-          <Route path="/register" element={<Register />}/>
         </Routes>
       }
     </div>
