@@ -20,23 +20,27 @@ export default function Login({ setToken }) {
     const [password, setPassword] = useState();
     const navigate = useNavigate();
 
-    const testUsers = [
-        {username: "testuser", email: "test@example.com", password: "password123"},
-        {username: "anotheruser", email: "another@example.com", password: "password456"},
-    ];
-
     const handleSubmit = (e) => {
         e.preventDefault();
-        const userExists = testUsers.some((user) => user.username === username && user.email === email && user.password === password);
-        if (userExists) {
-            // create and set token
-            const newToken = "your_token_here";
-            setToken(newToken);
-        } else {
-            // show error message
-            alert("Invalid login credentials. Please try again.");
-        }
-    }
+        // send a POST request to the backend with the login credentials
+        fetch('http://localhost:3000/login', {
+            method: 'POST',
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify({username, email, password}),
+        })
+            .then((response) => response.json())
+            .then((data) => {
+                if (data.error) {
+                  // show error message
+                  alert(data.error);
+                } else {
+                  // set the token and redirect to the dashboard
+                  setToken(data.token);
+                  //redirect
+                  navigate("/forum");
+                }
+            });
+    };
 
     return (
         <div className='login'>
