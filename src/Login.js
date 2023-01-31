@@ -1,7 +1,7 @@
 import './Login.css';
 import React, { useState } from "react";
 import PropTypes from 'prop-types';
-import { useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom"
 
 async function loginUser(credentials) {
     return fetch('http://localhost:8080/login', {
@@ -36,8 +36,9 @@ export default function Login({ setToken }) {
                 } else {
                   // set the token and redirect to the dashboard
                   setToken(data.token);
-                  //redirect
+                  // redirect
                   console.log("Redirecting...")
+                  console.log(data.token)
                   navigate("/forum");
                 }
             });
