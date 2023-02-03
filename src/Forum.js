@@ -1,5 +1,5 @@
 import './Forum.css';
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import announcements from "./announcements.png";
 import avatar from "./avatar.png"
@@ -7,6 +7,17 @@ import avatar from "./avatar.png"
 export default function Forum() {
     const navigate = useNavigate();
     const [search, setSearch] = useState();
+
+    var [date,setDate] = useState(new Date());
+    
+    useEffect(() => {
+        var timer = setInterval(()=>setDate(new Date()), 1000 )
+        return function cleanup() {
+            clearInterval(timer)
+        }
+    
+    });
+
     return (
         <div className='forum'>
             <div className='forum-body'>
@@ -16,7 +27,7 @@ export default function Forum() {
                         <div className='forum-profile-text'>
                             <div className='forum-welcome-message'>Hello, username</div>
                             <div className='empty-div-profile'></div>
-                            <div className='forum-time-text'>January 13, 2023, 04:45:45 AM</div>
+                            <div className='forum-time-text'>{date.toLocaleDateString()} {date.toLocaleTimeString()}</div>
                         </div>
                         <div className='empty-div-header'></div>
                         <input
@@ -38,6 +49,9 @@ export default function Forum() {
                         <button type='button' className='forum-logout-button link-buttons'>Logout</button><div className='forum-link-space'></div>
                     </div>
                 </div>
+
+                
+
             </div>
         </div>
     );
