@@ -1,6 +1,8 @@
 import './Forum.css';
+import Category from './forumpages/category';
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import { Routes, Route, Link, Outlet } from 'react-router-dom';
 import announcements from "./announcements.png";
 import avatar from "./avatar.png"
 
@@ -41,16 +43,16 @@ export default function Forum() {
                     </div>
                     <div className='empty-div-links-space'></div>
                     <div className='forum-links'>
-                        <button type='button' className='forum-home-button link-buttons'>home</button><div className='forum-link-space'></div>
+                        <button type='button' className='forum-home-button link-buttons' onClick={() => {navigate("category")}}>home</button><div className='forum-link-space'></div>
                         <button type='button' className='forum-help-button link-buttons'>Help</button><div className='forum-link-space'></div>
                         <button type='button' className='forum-profile-button link-buttons'>Profile</button><div className='forum-link-space'></div>
                         <button type='button' className='forum-messages-button link-buttons'>Messages</button><div className='forum-link-space'></div>
                         <button type='button' className='forum-members-button link-buttons'>Members</button><div className='forum-link-space'></div>
-                        <button type='button' className='forum-logout-button link-buttons'>Logout</button><div className='forum-link-space'></div>
+                        <button type='button' className='forum-logout-button link-buttons' onClick={() => {navigate("/login")}}>Logout</button><div className='forum-link-space'></div>
                     </div>
                 </div>
 
-                
+                <Outlet />
 
             </div>
         </div>
