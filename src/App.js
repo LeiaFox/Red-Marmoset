@@ -36,7 +36,9 @@ function App() {
         <Routes>
           <Route path="/login" element={<Login setToken={setToken}/>}/>
           <Route path="/register" element={<Register />}/>
-          <Route path="/forum" element={<Forum />}/>
+          <Route path="/forum" element={<Forum />}>
+            <Route path="" />
+          </Route>
         </Routes>
         :
         <Routes>
